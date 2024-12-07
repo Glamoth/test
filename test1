@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main() {
+	float a;
+	scanf_s("%f", &a);
+	double xn[10000], yn[10000];
+	xn[0] = 0;
+	yn[0] = a;
+		for (int i = 1;i <= 10000;i++) {
+			xn[i] = i * 0.001;
+			yn[i] = 0.999 * yn[i - 1];
+			printf("%lf %lf\n", xn[i], yn[i]);
+			if (yn[i - 1]-yn[i] < 0.00001)
+				break;
+		}
+		return 0;
+}

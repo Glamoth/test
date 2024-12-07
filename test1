@@ -9,7 +9,7 @@ int main() {
 			xn[i] = i * 0.001;
 			yn[i] = 0.999 * yn[i - 1];
 			printf("%lf %lf\n", xn[i], yn[i]);
-			if (yn[i - 1]-yn[i] < 0.00001)
+			if (yn[i - 1]-yn[i] < 0.00001)//当差值小于0.001倍的步长时，停止循环
 				break;
 		}
 		return 0;
